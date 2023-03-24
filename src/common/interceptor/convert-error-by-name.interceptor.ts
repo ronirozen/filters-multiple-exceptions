@@ -11,7 +11,7 @@ export class ConvertErrorByNameInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     return next.handle().pipe(
       catchError(error => {
-        throw new (errors[error.message] ? errors[error.message] : Error)("ddddddddddd");
+        throw new (errors[error.message] ? errors[error.message] : Error)("Just something");
       })
     );
   }

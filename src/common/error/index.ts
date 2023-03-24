@@ -1,2 +1,2 @@
-export * from "./ido.error";
-export * from "./roni.error";
+export * from "./b.error";
+export * from "./a.error";

@@ -6,13 +6,23 @@ import { AppService } from "./app.service";
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get("/roni")
-  throwRoni(): string {
-    throw new Error("Roni");
+  @Get("/")
+  getDate(): string {
+    return "Hi, it's works";
   }
 
-  @Get("/ido")
-  throwIdo(): string {
-    throw new Error("Ido");
+  @Get("/error")
+  throwError(): string {
+    throw new Error();
+  }
+
+  @Get("/a")
+  throwA(): string {
+    throw new Error("A");
+  }
+
+  @Get("/b")
+  throwB(): string {
+    throw new Error("B");
   }
 }

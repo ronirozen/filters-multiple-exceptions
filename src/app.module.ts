@@ -4,7 +4,7 @@ import { APP_FILTER, APP_INTERCEPTOR } from "@nestjs/core";
 import { AppService } from "./app.service";
 import { AppController } from "./app.controller";
 import { ConvertErrorByNameInterceptor } from "./common/interceptor";
-import { IdoExceptionFilter, RoniExceptionFilter } from "./common/exception-filter";
+import { BExceptionFilter, AExceptionFilter } from "./common/exception-filter";
 
 @Module({
   imports: [],
@@ -13,11 +13,11 @@ import { IdoExceptionFilter, RoniExceptionFilter } from "./common/exception-filt
     AppService,
     {
       provide: APP_FILTER,
-      useClass: RoniExceptionFilter
+      useClass: AExceptionFilter
     },
     {
       provide: APP_FILTER,
-      useClass: IdoExceptionFilter
+      useClass: BExceptionFilter
     },
     {
       provide: APP_INTERCEPTOR,
